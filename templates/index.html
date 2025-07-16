@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Career Guide Chatbot</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #fce4ec);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 50px 0;
+            margin: 0;
+        }
+
+        .chat-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px 35px;
+            width: 600px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #1a237e;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        textarea {
+            resize: none;
+            height: 140px;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            border-color: #1976d2;
+        }
+
+        button {
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1565c0;
+        }
+
+        .response-box {
+            margin-top: 25px;
+            background-color: #f1f8e9;
+            border-left: 5px solid #66bb6a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .response-box h2 {
+            margin-top: 0;
+            color: #2e7d32;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        @media (max-width: 650px) {
+            .chat-container {
+                width: 90%;
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h1>Career Guide Chatbot</h1>
+        <form method="post">
+            <textarea name="message" placeholder="Ask your career-related question..." required></textarea>
+            <button type="submit">Ask</button>
+        </form>
+
+        {% if response %}
+        <div class="response-box">
+            <h2>Response:</h2>
+            <p>{{ response }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        
+    </div>
+</body>
+</html>
